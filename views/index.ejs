@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main>
+    <span class="head">TO<span style="color: #D7C49EFF; font-size: 100px;">DO</span> List</span>
+    <form action ="/add" method="POST" class="form">
+        <input type="text" name="newtask" placeholder="add new task" class="in" autocomplete="off">
+        <button> Add </button>
+    </form>    
+    <div>
+        <ul>
+        <% for( var i = 0; i < task.length; i++){ %>
+            <li>
+                <span class="list"><%= task[i].todo %></span> 
+                <form action="/remove" method="post"><button name="items"  value="<%= task[i].sl_no %>">Remove</button>
+                </form>            
+            </li>
+         <% } %>
+        </ul>
+    </div>
+    </main>
+</body>
+</html>
+
